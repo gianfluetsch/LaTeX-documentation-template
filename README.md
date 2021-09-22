@@ -1,3 +1,3 @@
 # LaTeX-documentation-template
 
-Credits to [zindable](https://github.com/zindable) :)
+Credits to [zindable](https://github.com/zindable) :blush:
