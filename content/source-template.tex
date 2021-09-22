@@ -1,0 +1,82 @@
+%! Licence = CC BY-NC-SA 4.0
+
+%! Author = gianfluetsch
+%! Date = 07.09.2021
+%! Project = latex-documentation-template
+
+\section{Section}
+
+
+
+\subsection{Subsection}
+
+
+\subsubsection{Subsubsection}
+\lipsum[1]
+
+
+
+\subsubsection{graphic}
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5]{img/OST_Logo}
+    \caption{The OST Logo!}\label{fig:figure}
+\end{figure}
+
+\subsubsection{table}
+\begin{table}[h]
+    \centering
+    \caption{example tabular}
+    \label{tab:example tabular}
+    \begin{tabular}{l c r}
+%       \begin{tabular}{l | c | r} -> Horizontale Trennstriche
+        \bfseries{left align} & \bfseries{center align} & \bfseries{right align}\\ \hline
+        hello & world & test\\
+        hello & world & test\\
+    \end{tabular}
+\end{table}
+
+\subsubsection{items}
+\begin{itemize}
+    \item hello
+    \item world
+    \item !
+\end{itemize}
+
+\subsubsection{enumeration}
+\begin{enumerate}
+    \item hello
+    \item world
+    \item !
+\end{enumerate}
+
+\subsubsection{listings}
+\begin{lstlisting}[caption=example listing,label={lst:lstlisting}]
+//simple listing in default language
+    for (int i = 0; i < 10; i++) {
+    System.out.printline(i + "hello world!");
+    }
+\end{lstlisting}
+
+\begin{lstlisting}[firstnumber=17, caption=example listing, style=JavaScript,label={lst:lstlisting2}]
+// example listing in JS
+    var = hello world
+\end{lstlisting}
+
+
+\subsubsection{minipage}
+\begin{minipage}{0.5\linewidth}
+    \begin{center}
+        \includegraphics[width=0.5\linewidth]{example-image}
+        \vspace{-8pt}
+    \end{center}
+\end{minipage}
+\begin{minipage}{0.45\linewidth}
+    This is a little example text on the right side.\\
+    \texttt{Could also be written} \textit{with different} \textbf{font styles}
+\end{minipage}
+
+\subsubsection{cite}
+Hello World!\cite{DummyEntry} \\
+
+This text requires a citation \cite{einstein} to embed the citation in the required position in the text.

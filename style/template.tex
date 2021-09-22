@@ -1,0 +1,136 @@
+%! Licence = CC BY-NC-SA 4.0
+
+%! Author = gianfluetsch
+%! Date = 07.09.2021
+%! Project = Latex-documentation-template
+
+\documentclass[a4paper, oneside, 10pt]{scrartcl}
+
+% charset
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% use language german
+\usepackage[ngerman]{babel}
+
+% format page size
+\usepackage{geometry}
+\geometry{top=2.54cm,left=2.54cm,right=2.54cm}
+
+% tabular
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{colortbl}
+
+% math
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+
+% graphic
+\usepackage{graphicx}
+\graphicspath{{img/}}
+
+% colors
+\usepackage[dvipsnames]{xcolor}
+
+% multi columns
+\usepackage{multicol}
+
+% Enable clickable table of contents
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    linkcolor={black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+% enable BibTex
+%\usepackage[block=ragged]{biblatex}
+%\bibliographystyle{ieeetr} %TODO: If uncomment -> exit code 1
+
+% make items compact
+\setlist{topsep=0pt, leftmargin=4mm, nolistsep}
+\setlength{\parindent}{0cm}
+
+% author and institute
+\newcommand{\AUTHOR}{Gian Fl{ü}tsch}
+\newcommand{\INSTITUTE}{Hochschule für Technik Rapperswil}
+
+% define header and footer
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setkomafont{pagehead}{\normalfont}
+\setkomafont{pagefoot}{\normalfont}
+
+\fancyhead[LO]{\nouppercase \leftmark}
+\fancyhead[RO]{\TITLE}
+\fancyfoot[LO]{\AUTHOR}
+\fancyfoot[RO]{Seite \thepage}
+\fancyfoot[CO]{\phantom}
+\renewcommand\headrulewidth{0.5pt}
+\renewcommand\footrulewidth{0.5pt}
+%\headsep = -2pt
+%\footskip = 0pt
+
+% define color
+\definecolor{sectionColor}{HTML}{000000}
+\definecolor{subSectionColor}{HTML}{000000}
+\definecolor{subSubSectionColor}{HTML}{000000}
+\definecolor{codeBackground}{RGB}{245,245,245}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{darkGreen}{RGB}{0,150,0}
+\definecolor{OSTPink}{RGB}{140,25,95}
+\definecolor{DarkPurple}{rgb}{0.4, 0.1, 0.4}
+
+% define section format
+%define section color and size
+\addtokomafont{section}{\color{DarkPurple}}
+\addtokomafont{subsection}{\color{subSectionColor}}
+\addtokomafont{subsubsection}{\small \color{subSubSectionColor}}
+
+% new section -> new page
+\let\stdsection\section
+\renewcommand\section{\clearpage\stdsection}
+
+% import code listings
+\usepackage{listings}
+\usepackage{beramono}
+\input{./style/listings.tex}
+\lstset{style=java}
+\lstset{
+    literate=  % Allow for German characters in lstlistings.
+        {Ö}{{\"O}}1
+        {Ä}{{\"A}}1
+        {Ü}{{\"U}}1
+        {ü}{{\"u}}1
+        {ä}{{\"a}}1
+        {ö}{{\"o}}1
+}
+
+% dotted rule
+\usepackage{dashrule}
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+\newcommand{\drule}[3][0]{
+    \tikz[baseline]{\path[decoration={markings,
+    mark=between positions 0 and 1 step 2*#3
+    with {\node[fill, circle, minimum width=#3, inner sep=0pt, anchor=south west] {};}},postaction={decorate}]  (0,#1) -- ++(#2,0);}}
+
+% no indentation
+\setlength{\parindent}{0cm}
+
+% include lorem ipsum
+\usepackage{lipsum}
+
+% degree symbol
+\usepackage{textcomp}
+
+% insert PDF's
+\usepackage{pdfpages}
+
+% globaly small URL
+%\renewcommand{\UrlFont}{\ttfamily\small}
+\renewcommand{\UrlFont}{\em}

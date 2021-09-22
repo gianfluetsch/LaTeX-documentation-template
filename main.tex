@@ -1,0 +1,30 @@
+%! Licence = CC BY-NC-SA 4.0
+
+%! Author = gianfluetsch
+%! Date = 07.09.2021
+%! Project = Latex-documentation-template
+
+%import template
+\input{style/template.tex}
+
+
+
+\newcommand{\SUBJECT}{Subject}
+\newcommand{\TITLE}{\LaTeX \space documentation template}
+\newcommand{\PROF}{Max Mustermann}
+
+\newcommand{\VERSION}{06.09.2021}
+
+\begin{document}
+
+%import cover and tableofcontents
+    \input{style/cover.tex}
+
+%import content
+    \input{content/source-template.tex}
+    \input{content/section2.tex}
+
+%import appendix
+    \input{style/appendix.tex}
+
+\end{document}
